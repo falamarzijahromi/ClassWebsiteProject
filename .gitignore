@@ -4,3 +4,14 @@
 
 /.vs
 /Source/.vs/WebsiteProject/v15
+/Source/.vs/config
+/Source/Common/bin/Debug/netstandard2.0
+/Source/Common/obj
+/Source/CompositionCenter/obj
+/Source/CompositionRoot/bin/Debug/netstandard2.0
+/Source/CompositionRoot/obj
+/Source/Infrastructure.AspnetcoreIdentity/bin/Debug/netstandard2.0
+/Source/Infrastructure.AspnetcoreIdentity/obj
+/Source/Infrastructure.Efcore/bin/Debug/netstandard2.0
+/Source/Infrastructure.Efcore/obj
+/Source/WebsiteHttp/bin/Debug/netcoreapp2.2
