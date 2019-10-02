@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Efcore.Migrations
 {
     [DbContext(typeof(ProjectDbContext))]
-    [Migration("20190925170842_ChangeUseerPasswordToString")]
-    partial class ChangeUseerPasswordToString
+    [Migration("20191002135455_initialize")]
+    partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

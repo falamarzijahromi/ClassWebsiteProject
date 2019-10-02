@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Common.Models;
+using Common.Options;
 using CompositionRoot;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,6 +35,12 @@ namespace WebsiteHttp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 20;
+            });
+
+            services.Configure<CustomOptions>(options => { options.Name = "Mehdi"; });
 
             services.AddIdentity<User, Role>();
 
@@ -58,13 +66,15 @@ namespace WebsiteHttp
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }

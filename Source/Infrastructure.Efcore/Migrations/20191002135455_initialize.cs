@@ -2,7 +2,7 @@
 
 namespace Infra.Efcore.Migrations
 {
-    public partial class RoleMigration : Migration
+    public partial class initialize : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,12 +16,27 @@ namespace Infra.Efcore.Migrations
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Roles");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

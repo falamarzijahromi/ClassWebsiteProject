@@ -16,6 +16,10 @@ namespace CompositionRoot
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
 
+            builder.RegisterType<ProjectRoleStore>()
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
             builder.Register(r => ProjectDbContextFactory.CreateDbContext())
                 .As<ProjectDbContext>()
                 .InstancePerLifetimeScope();

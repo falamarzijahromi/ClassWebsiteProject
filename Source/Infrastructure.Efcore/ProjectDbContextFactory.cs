@@ -15,7 +15,7 @@ namespace Infra.Efcore
 
             var cnnBuilder = new SqlConnectionStringBuilder()
             {
-                DataSource = "(localdb)\\mssqllocaldb;Database",
+                DataSource = "CLASS1\\MSSQLSERVER1",
                 InitialCatalog = "WebsiteProject",
                 IntegratedSecurity = true,
             };
