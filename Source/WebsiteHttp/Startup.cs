@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebsiteHttp.Validators;
 
 namespace WebsiteHttp
 {
@@ -37,12 +38,14 @@ namespace WebsiteHttp
 
             services.Configure<IdentityOptions>(options =>
             {
-                options.Password.RequiredLength = 20;
+                options.Password.RequiredLength = 6;
             });
 
             services.Configure<CustomOptions>(options => { options.Name = "Mehdi"; });
 
-            services.AddIdentity<User, Role>();
+            services.AddIdentity<User, Role>()
+                .AddUserValidator<UserNationalCodeValidator>();
+                //.AddPasswordValidator<PasswordValidator>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

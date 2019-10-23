@@ -14,5 +14,7 @@ namespace WebsiteHttp.Models
         public string Password { get; set; }
         [Required, Compare(nameof(Password))]
         public string ReEnterPassword { get; set; }
+        [Required]
+        public string NationalCode { get; set; }
     }
 }

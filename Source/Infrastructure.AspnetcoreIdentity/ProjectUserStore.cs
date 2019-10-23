@@ -16,19 +16,14 @@ namespace Infra.AspnetcoreIdentity
 {
     public class ProjectUserStore : IQueryableUserStore<User>, IUserPasswordStore<User>
     {
-        private readonly ProjectDbContext _dbContext;
-        private readonly IPasswordHasher<User> _passHasher;
+        private readonly IUserRepository userRepo;
 
-        public ProjectUserStore(
-            ProjectDbContext dbContext, 
-            IPasswordHasher<User> passHasher, 
-            IOptions<CustomOptions> options)
+        public ProjectUserStore(IUserRepository userRepo)
         {
-            this._dbContext = dbContext;
-            _passHasher = passHasher;
+            this.userRepo = userRepo;
         }
 
-        public IQueryable<User> Users => _dbContext.Users;
+        public IQueryable<User> Users => userRepo.Users;
 
         public async Task<IdentityResult> CreateAsync(User user, CancellationToken cancellationToken)
         {
@@ -36,13 +31,7 @@ namespace Infra.AspnetcoreIdentity
 
             try
             {
-                var passHash = _passHasher.HashPassword(user, user.Password);
-
-                await SetPasswordHashAsync(user, passHash, cancellationToken);
-
-                await _dbContext.Users.AddAsync(user, cancellationToken);
-
-                await _dbContext.SaveChangesAsync(cancellationToken);
+                await userRepo.SaveUserAsync(user);
 
                 result = IdentityResult.Success;
             }
@@ -68,16 +57,16 @@ namespace Infra.AspnetcoreIdentity
         {
         }
 
-        public Task<User> FindByIdAsync(string userId, CancellationToken cancellationToken)
+        public async Task<User> FindByIdAsync(string userId, CancellationToken cancellationToken)
         {
-            var user = _dbContext.Users.SingleOrDefault(usr => usr.Id == userId);
+            var user = await userRepo.GetUserByIdAsync(userId);
 
-            return Task.FromResult(user);
+            return user;
         }
 
         public async Task<User> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)
         {
-            var user = await _dbContext.Users.SingleOrDefaultAsync(usr => usr.Id == normalizedUserName, cancellationToken: cancellationToken);
+            var user = await userRepo.GetUserByIdAsync(normalizedUserName);
 
             return user;
         }

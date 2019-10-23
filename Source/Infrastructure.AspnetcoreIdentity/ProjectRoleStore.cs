@@ -4,29 +4,70 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Common.Models;
+using Infra.Efcore;
 using Microsoft.AspNetCore.Identity;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.AspnetcoreIdentity
 {
-    public class ProjectRoleStore : IRoleStore<Role>
+    public class ProjectRoleStore : IQueryableRoleStore<Role>
     {
-        public ProjectRoleStore()
+        private readonly ProjectDbContext dbContext;
+
+        public IQueryable<Role> Roles => dbContext.Roles.Include(rl => rl.Users);
+
+        public ProjectRoleStore(ProjectDbContext dbContext)
         {
-                
+            this.dbContext = dbContext;
         }
 
         public void Dispose()
         {
         }
 
-        public Task<IdentityResult> CreateAsync(Role role, CancellationToken cancellationToken)
+        public async Task<IdentityResult> CreateAsync(Role role, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            IdentityResult result;
+
+            try
+            {
+                await dbContext.Roles.AddAsync(role);
+
+                await dbContext.SaveChangesAsync();
+
+                result = IdentityResult.Success;
+            }
+            catch (Exception e)
+            {
+                var error = new IdentityError() { Description = e.Message };
+
+                result = IdentityResult.Failed(error);
+            }
+
+            return result;
         }
 
-        public Task<IdentityResult> UpdateAsync(Role role, CancellationToken cancellationToken)
+        public async Task<IdentityResult> UpdateAsync(Role role, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            IdentityResult result;
+
+            try
+            {
+                dbContext.Roles.Update(role);
+
+                await dbContext.SaveChangesAsync();
+
+                result = IdentityResult.Success;
+            }
+            catch (Exception e)
+            {
+                var error = new IdentityError() { Description = e.Message };
+
+                result = IdentityResult.Failed(error);
+            }
+
+            return result;
         }
 
         public Task<IdentityResult> DeleteAsync(Role role, CancellationToken cancellationToken)
@@ -36,37 +77,43 @@ namespace Infra.AspnetcoreIdentity
 
         public Task<string> GetRoleIdAsync(Role role, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(role.Id);
         }
 
         public Task<string> GetRoleNameAsync(Role role, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(role.Id);
         }
 
         public Task SetRoleNameAsync(Role role, string roleName, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            role.Id = roleName;
+
+            return Task.CompletedTask;
         }
 
         public Task<string> GetNormalizedRoleNameAsync(Role role, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(role.Id);
         }
 
         public Task SetNormalizedRoleNameAsync(Role role, string normalizedName, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            role.Id = normalizedName;
+
+            return Task.CompletedTask;
         }
 
         public Task<Role> FindByIdAsync(string roleId, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var role = dbContext.Roles.Include(rl => rl.Users).FirstOrDefault(rol => rol.Id == roleId);
+
+            return Task.FromResult(role);
         }
 
         public Task<Role> FindByNameAsync(string normalizedRoleName, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return FindByIdAsync(normalizedRoleName, cancellationToken);
         }
     }
 }

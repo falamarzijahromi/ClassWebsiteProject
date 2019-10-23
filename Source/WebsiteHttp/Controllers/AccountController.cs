@@ -48,9 +48,10 @@ namespace WebsiteHttp.Controllers
             {
                 Id = model.UserName,
                 Password = model.Password,
+                NationalCode = model.NationalCode,
             };
 
-            var result = await userManager.CreateAsync(user);
+            var result = await userManager.CreateAsync(user, user.Password);
 
             var errorBuilder = result.Errors.Aggregate(new StringBuilder(), (seed, error) =>
             {

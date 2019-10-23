@@ -23,6 +23,18 @@ namespace CompositionRoot
             builder.Register(r => ProjectDbContextFactory.CreateDbContext())
                 .As<ProjectDbContext>()
                 .InstancePerLifetimeScope();
+
+            builder.RegisterType<EfCoreUserRepo>()
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<UserClaimsPrincipalFactory<User>>()
+                .AsSelf()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<ClaimFactory>()
+                .As<IUserClaimsPrincipalFactory<User>>()
+                .InstancePerLifetimeScope();
         }
     }
 }
