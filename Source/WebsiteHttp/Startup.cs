@@ -6,6 +6,7 @@ using Autofac;
 using Common.Models;
 using Common.Options;
 using CompositionRoot;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -13,6 +14,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebsiteHttp.Requirements;
 using WebsiteHttp.Validators;
 
 namespace WebsiteHttp
@@ -45,7 +47,19 @@ namespace WebsiteHttp
 
             services.AddIdentity<User, Role>()
                 .AddUserValidator<UserNationalCodeValidator>();
-                //.AddPasswordValidator<PasswordValidator>();
+            //.AddPasswordValidator<PasswordValidator>();
+
+            services.AddTransient<IAuthorizationHandler, TimePolicyAuthorizationHandler>();
+
+            services.AddAuthorization(config =>
+            {
+                config.AddPolicy("OnlyHasTime", polconf =>
+                {
+                    polconf.RequireAuthenticatedUser();
+                    polconf.RequireClaim("Time");
+                    polconf.AddRequirements(new TimePolicyRequirement("12:05"));
+                });
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

@@ -25,27 +25,20 @@ namespace Infra.AspnetcoreIdentity
         {
             var defaultPrincipal = await defaultFactory.CreateAsync(user);
 
-            var defaultClaims = defaultPrincipal.Claims;
+            var identity = defaultPrincipal.Identities.Single();
 
             var role = dbContext.Roles
                 .SingleOrDefault(rl =>
                 rl.Users.Any(usr => usr.Id == user.Id));
 
-            var resultIds = new ClaimsIdentity();
-
-            resultIds.AddClaims(defaultClaims);
-
             if (role != null)
             {
-
                 var roleClaim = new Claim(ClaimTypes.Role, role.Id);
 
-                resultIds.AddClaim(roleClaim);
+                identity.AddClaim(roleClaim);
             }
 
-            var result = new ClaimsPrincipal(resultIds);
-
-            return result;
+            return defaultPrincipal;
         }
     }
 }

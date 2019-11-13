@@ -7,10 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebsiteHttp.Controllers
 {
-    [Authorize]
     public class ReportController : Controller
     {
-        //[Authorize(Roles = "ADMIN,MANAGER")]
+        [Authorize(Roles = "ADMIN,MANAGER")]
         public IActionResult Index()
         {
             return View();

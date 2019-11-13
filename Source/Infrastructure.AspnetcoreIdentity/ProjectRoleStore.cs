@@ -8,10 +8,11 @@ using Infra.Efcore;
 using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Infra.AspnetcoreIdentity
 {
-    public class ProjectRoleStore : IQueryableRoleStore<Role>
+    public class ProjectRoleStore : IQueryableRoleStore<Role>, IRoleClaimStore<Role>
     {
         private readonly ProjectDbContext dbContext;
 
@@ -114,6 +115,22 @@ namespace Infra.AspnetcoreIdentity
         public Task<Role> FindByNameAsync(string normalizedRoleName, CancellationToken cancellationToken)
         {
             return FindByIdAsync(normalizedRoleName, cancellationToken);
+        }
+
+
+        public Task<IList<Claim>> GetClaimsAsync(Role role, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return Task.FromResult((IList<Claim>)new List<Claim>());
+        }
+
+        public Task AddClaimAsync(Role role, Claim claim, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task RemoveClaimAsync(Role role, Claim claim, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            return Task.CompletedTask;
         }
     }
 }
