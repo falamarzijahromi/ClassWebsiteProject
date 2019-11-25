@@ -164,3 +164,5 @@ C:\Users\Class2-Teacher\Source\Repos\ClassWebsiteProject2\Source\WebsiteHttp\obj
 C:\Users\Class2-Teacher\Source\Repos\ClassWebsiteProject2\Source\WebsiteHttp\obj\Debug\netcoreapp2.2\WebsiteHttp.dll
 C:\Users\Class2-Teacher\Source\Repos\ClassWebsiteProject2\Source\WebsiteHttp\obj\Debug\netcoreapp2.2\WebsiteHttp.pdb
 C:\Users\Class2-Teacher\Source\Repos\ClassWebsiteProject2\Source\WebsiteHttp\obj\Debug\netcoreapp2.2\Razor\Views\Claims\Index.g.cshtml.cs
+C:\Users\Class2-Teacher\Source\Repos\ClassWebsiteProject\Source\WebsiteHttp\obj\Debug\netcoreapp2.2\Razor\Views\Claims\Index.g.cshtml.cs
+C:\Users\Class2-Teacher\Source\Repos\ClassWebsiteProject\Source\WebsiteHttp\obj\Debug\netcoreapp2.2\Razor\Views\Check\Index.g.cshtml.cs

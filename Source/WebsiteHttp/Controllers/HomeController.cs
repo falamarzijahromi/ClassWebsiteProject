@@ -10,8 +10,9 @@ namespace WebsiteHttp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string lang, int version)
         {
+            var allData = RouteData.Values["catchAllData"];
             return View();
         }
 
@@ -24,6 +25,12 @@ namespace WebsiteHttp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Route("diff/{message:int?}")]
+        public string Different(int? message)
+        {
+            return message.HasValue ? message.Value.ToString() : "Done" ;
         }
     }
 }

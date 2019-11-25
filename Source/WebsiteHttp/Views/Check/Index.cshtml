@@ -1,0 +1,34 @@
+﻿@model WebsiteHttp.Models.CheckViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<h4>CheckViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CheckValidation">
+            <div class="form-group">
+                <label asp-for="Input" class="control-label"></label>
+                <input asp-for="Input" class="form-control" />
+                <span asp-validation-for="Input" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
