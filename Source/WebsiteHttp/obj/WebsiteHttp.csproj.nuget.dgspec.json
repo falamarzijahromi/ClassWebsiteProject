@@ -1,0 +1,350 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\WebsiteHttp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\Class2-Teacher\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Class2-Teacher\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Ramshini\\WebDesign 97.12.16 9-12\\Session-15\\LearnBootstrap": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj",
+        "projectName": "CompositionRoot.Autofac",
+        "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj",
+        "packagesPath": "C:\\Users\\Class2-Teacher\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Class2-Teacher\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Ramshini\\WebDesign 97.12.16 9-12\\Session-15\\LearnBootstrap": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj"
+              },
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.AspnetcoreIdentity\\Infra.AspnetcoreIdentity.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.AspnetcoreIdentity\\Infra.AspnetcoreIdentity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "autofac": {
+              "target": "Package",
+              "version": "[4.9.4, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.AspnetcoreIdentity\\Infra.AspnetcoreIdentity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.AspnetcoreIdentity\\Infra.AspnetcoreIdentity.csproj",
+        "projectName": "Infra.AspnetcoreIdentity",
+        "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.AspnetcoreIdentity\\Infra.AspnetcoreIdentity.csproj",
+        "packagesPath": "C:\\Users\\Class2-Teacher\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.AspnetcoreIdentity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Class2-Teacher\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Ramshini\\WebDesign 97.12.16 9-12\\Session-15\\LearnBootstrap": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj"
+              },
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj",
+        "projectName": "Infra.Efcore",
+        "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj",
+        "packagesPath": "C:\\Users\\Class2-Teacher\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Class2-Teacher\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Ramshini\\WebDesign 97.12.16 9-12\\Session-15\\LearnBootstrap": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\WebsiteHttp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\WebsiteHttp.csproj",
+        "projectName": "WebsiteHttp",
+        "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\WebsiteHttp.csproj",
+        "packagesPath": "C:\\Users\\Class2-Teacher\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Class2-Teacher\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\Ramshini\\WebDesign 97.12.16 9-12\\Session-15\\LearnBootstrap": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj"
+              },
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj"
+              },
+              "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj": {
+                "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[4.9.4, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.6, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

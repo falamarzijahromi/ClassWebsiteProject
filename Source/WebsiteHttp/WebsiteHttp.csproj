@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
 
@@ -23,6 +23,13 @@
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\CompositionRoot\CompositionRoot.Autofac.csproj" />
     <ProjectReference Include="..\Infrastructure.Efcore\Infra.Efcore.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

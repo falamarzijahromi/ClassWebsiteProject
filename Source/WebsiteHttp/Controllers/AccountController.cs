@@ -1,4 +1,5 @@
 ﻿using Common.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -38,6 +39,39 @@ namespace WebsiteHttp.Controllers
                 ModelState.AddModelError("", errors);
                 return View("Index", model);
             }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        public async Task<IActionResult> GetUser(string userName)
+        {
+            var user = await userManager.FindByIdAsync(userName);
+
+            var model = new UserNationalEditViewModel
+            {
+                HashedPassword = user.Password,
+                UserName = user.Id,
+                NationalCode = user.NationalCode,
+            };
+
+            return View(model);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> EditUser(
+            [Bind(nameof(UserNationalEditViewModel.NationalCode))]
+            UserNationalEditViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("GetUser", model);
+            }
+
+            var user = await userManager.FindByIdAsync(User.Identity.Name);
+
+            user.NationalCode = model.NationalCode;
+
+            await userManager.UpdateAsync(user);
 
             return RedirectToAction("Index", "Home");
         }

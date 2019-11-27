@@ -13082,11 +13082,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\WebsiteHttp\\WebsiteHttp.csproj",
+      "projectUniqueName": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\WebsiteHttp.csproj",
       "projectName": "WebsiteHttp",
-      "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\WebsiteHttp\\WebsiteHttp.csproj",
+      "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\WebsiteHttp.csproj",
       "packagesPath": "C:\\Users\\Class2-Teacher\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\WebsiteHttp\\obj\\",
+      "outputPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\WebsiteHttp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13106,14 +13106,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\Common\\Common.csproj": {
-              "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\Common\\Common.csproj"
+            "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Common\\Common.csproj"
             },
-            "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj": {
-              "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj"
+            "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj": {
+              "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\CompositionRoot\\CompositionRoot.Autofac.csproj"
             },
-            "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj": {
-              "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj"
+            "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj": {
+              "projectPath": "C:\\Users\\Class2-Teacher\\Source\\Repos\\ClassWebsiteProject5\\Source\\Infrastructure.Efcore\\Infra.Efcore.csproj"
             }
           }
         }

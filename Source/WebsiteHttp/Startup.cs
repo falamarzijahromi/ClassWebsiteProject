@@ -86,14 +86,14 @@ namespace WebsiteHttp
             app.UseAuthentication();
             app.UseMvc(routes =>
             {
-                //routes.MapRoute(
-                //    name: "default",
-                //    template: "{controller=Home}/{action=Index}/{id?}");
-
                 routes.MapRoute(
-                    name: "ApplicationRoute",
-                    template: "{action}/{controller}/{*catchAllData}",
-                    defaults: new { controller = "Home", action = "Index"});
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+                //routes.MapRoute(
+                //    name: "ApplicationRoute",
+                //    template: "{action}/{controller}/{*catchAllData}",
+                //    defaults: new { controller = "Home", action = "Index"});
             });
 
 
